@@ -1,0 +1,4 @@
+PongImage RCDATA "Win32\\Debug\\PongCover.png"
+TetrisImage RCDATA "Win32\\Debug\\TetrisCover.png"
+SnakeImage RCDATA "Win32\\Debug\\SnakeCover.png"
+SnakeLeaders RCDATA "Win32\\Debug\\LeadersSnake.txt"
