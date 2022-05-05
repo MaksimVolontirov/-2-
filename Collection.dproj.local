@@ -1,41 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.846,D:\Delphi projects\Games\PongUnit.dfm=D:\Delphi projects\Games\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.384,=D:\Delphi projects\Games\Win32\Debug\TetrisCover.png</Transaction>
     <Transaction>1899.12.30 00:00:00.000.356,=D:\Delphi projects\Games\Win32\Debug\PongCover.png</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.389,C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Delphi projects\Games\MainMenuUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.735,D:\Delphi projects\Games\TetrisUnit.dfm=D:\Delphi projects\Games\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.846,D:\Delphi projects\Games\PongUnit.dfm=D:\Delphi projects\Games\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.126,=D:\Delphi projects\Games\Win32\Debug\Background2.png</Transaction>
     <Transaction>1899.12.30 00:00:00.000.153,D:\Delphi projects\Games\Unit1.dfm=D:\Delphi projects\Games\SnakeUnit.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.735,D:\Delphi projects\Games\TetrisUnit.pas=D:\Delphi projects\Games\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.881,C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Project2.dproj=D:\Delphi projects\Games\Collection.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.729,=D:\Delphi projects\Games\Win32\Debug\Background1.png</Transaction>
     <Transaction>1899.12.30 00:00:00.000.769,=D:\Delphi projects\Games\Win32\Debug\LeadersSnake.txt</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.698,D:\Delphi projects\Games\Win32\Debug\LeadersSnake.txt=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.846,D:\Delphi projects\Games\PongUnit.pas=D:\Delphi projects\Games\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.735,D:\Delphi projects\Games\TetrisUnit.dfm=D:\Delphi projects\Games\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.881,C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Project2.dproj=D:\Delphi projects\Games\Collection.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.716,D:\Delphi projects\Games\UnitList.pas=D:\Delphi projects\Games\ListUnit.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.273,=D:\Delphi projects\Games\Win32\Debug\SnakeCover.png</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.761,=C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.514,D:\Delphi projects\Games\InfoUnit.pas=D:\Delphi projects\Games\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.829,D:\Delphi projects\Games\Unit1.pas=D:\Delphi projects\Games\UnitLisst.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.988,=D:\Delphi projects\Games\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.196,=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.282,=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.219,=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.873,D:\Delphi projects\Games\Unit1.pas=D:\Delphi projects\Games\HideUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.389,C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Delphi projects\Games\MainMenuUnit.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.153,D:\Delphi projects\Games\Unit1.pas=D:\Delphi projects\Games\SnakeUnit.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.208,D:\Delphi projects\Games\Unit1.pas=D:\Delphi projects\Games\UnitList.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.873,D:\Delphi projects\Games\Unit1.pas=D:\Delphi projects\Games\HideUnit.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.282,=D:\Delphi projects\Games\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.389,C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Delphi projects\Games\MainMenuUnit.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.219,=D:\Delphi projects\Games\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.664,=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.761,=C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.389,C:\Users\ADMIN\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Delphi projects\Games\MainMenuUnit.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.514,D:\Delphi projects\Games\InfoUnit.dfm=D:\Delphi projects\Games\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.915,=D:\Delphi projects\Games\Unit1.pas</Transaction>
-    <Transaction>2022.05.02 10:40:44.294,=D:\Delphi projects\Games\Unit1.pas</Transaction>
-    <Transaction>2022.05.02 10:40:57.514,D:\Delphi projects\Games\InfoUnit.dfm=D:\Delphi projects\Games\Unit1.dfm</Transaction>
-    <Transaction>2022.05.02 10:40:57.514,D:\Delphi projects\Games\InfoUnit.pas=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.196,=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.988,=D:\Delphi projects\Games\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.294,=D:\Delphi projects\Games\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Win32"/>
     <File Path="Win32\Debug"/>
-    <File Path="Win32\Debug\LeadersSnake.txt"/>
     <File Path="Win32\Debug\PongCover.png"/>
     <File Path="Win32\Debug\SnakeCover.png"/>
     <File Path="Win32\Debug\TetrisCover.png"/>
+    <File Path="Win32\Debug\Background1.png"/>
+    <File Path="Win32\Debug\Background2.png"/>
     <File Path="HideUnit.pas"/>
     <File Path="MainMenuUnit.pas"/>
     <File Path="MainMenuUnit.dfm"/>

@@ -8510,9 +8510,9 @@ object InfoForm: TInfoForm
   object GmailLabel: TLabel
     Left = 40
     Top = 344
-    Width = 87
+    Width = 93
     Height = 39
-    Caption = 'Gmail:'
+    Caption = 'E-mail:'
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWhite
     Font.Height = -33
@@ -8534,7 +8534,7 @@ object InfoForm: TInfoForm
     ParentFont = False
   end
   object BSUIRLabel: TLabel
-    Left = 320
+    Left = 248
     Top = 416
     Width = 126
     Height = 26

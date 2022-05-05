@@ -75,8 +75,8 @@ uses
     PongUnit, TetrisUnit, SnakeUnit, InfoUnit;
 const
     SETTINGS_PATH = 'Settings.txt';
-    BG1_PATH = 'Background1.png';
-    BG2_PATH = 'Background2.png';
+    BG1_PATH = 'Background1';
+    BG2_PATH = 'Background2';
     FULL_HD_W = 1920;
     FULL_HD_H = 1000;
     HD_W = 1280;
@@ -88,6 +88,7 @@ type
 var
     Games: Array[0..2] of TGame;
     PngImages: Array [0..2] of TPngImage;
+    Bg: TPngImage;
     IsAnimation, IsGame: Boolean;
     LeftX, LeftY, RightX, RightY, CenterX, CenterY, DeltaXCL, DeltaY, DeltaXCR, DeltaW, DeltaH: Integer;
 function Max(A,B: Integer): Integer;
@@ -204,7 +205,9 @@ begin
         SlidesImage.Left := 0;
         SlidesImage.Width := MainMenuForm.ClientWidth;
         SlidesImage.Height := MainMenuForm.ClientHeight;
-        Background.Picture.LoadFromFile(Settings.Background);
+        Bg := TPngImage.Create;
+        Bg.LoadFromResourceName(HInstance, Settings.Background);
+        Background.Picture.Graphic := Bg;
         Games[0] := Pong;
         Games[1] := Tetris;
         Games[2] := Snake;
@@ -363,6 +366,7 @@ begin
     SettingsPanel.Enabled := False;
     SettingsPanel.Hide;
     IsGame := True;
+    ChooseShape.Pen.Color := $FF8000;
 end;
 procedure SwapArrayLeft();
 var
@@ -515,7 +519,6 @@ begin
         Tetris: begin
             MainMenuForm.Hide();
             TetrisForm.Show();
-
         end;
         Pong: begin
             MainMenuForm.Hide();

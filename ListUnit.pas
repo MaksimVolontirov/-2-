@@ -107,7 +107,7 @@ begin
 end;
 procedure TList.Delete();
 var
-    Ptr, Tmp: Pt;
+    Ptr: Pt;
 begin
     Ptr := Head;
     While(Ptr.Next <> Tail)do

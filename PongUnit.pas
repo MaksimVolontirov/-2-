@@ -438,6 +438,84 @@ begin
     end;
 end;
 
+procedure MoveBit2();
+begin
+    if(Bit2Y + SIZEY / 2 > BallY + SIZEX / 2)then
+            if(Bit2Y - SizeY div 12 >= 0)then
+                Bit2Y := Bit2Y - SizeY div 12;
+    if(Bit2Y + SIZEY / 2 < BallY + SIZEX / 2)then
+        if(Bit2Y + SizeY div 12 <= PongForm.GameField.Height - SIZEY)then
+            Bit2Y := Bit2Y + SizeY div 12;
+end;
+procedure MoveBall();
+begin
+    if((BallY + DirY*SpeedY < 0) or (BallY + DirY*SpeedY > PongForm.GameField.Height - SIZEX))then
+            DirY := -DirY;
+    BallX := BallX + DirX * SpeedX;
+    BallY := BallY + DirY * SpeedY;
+end;
+procedure CheckGoal();
+begin
+    if(BallX > PongForm.GameField.Width)then
+    begin
+        Game := False;
+        Inc(Score1);
+        PongForm.Score1Label.Caption := IntToStr(Score1);
+        if(Score1 > 11)then
+        begin
+            if(Settings.Language = English)then
+                PongForm.InfoLabel.Caption := 'Victory' + #13#10 + 'Press SPACE to start again'
+            else
+                PongForm.InfoLabel.Caption := 'Победа' + #13#10 + 'Нажмите пробел, чтобы начать заново';
+            PongForm.InfoLabel.Left := (PongForm.ClientWidth - PongForm.InfoLabel.Width) div 2;
+            PongForm.InfoLabel.Top := (PongForm.ClientHeight - PongForm.InfoLabel.Height) div 2;
+            PongForm.InfoLabel.Show;
+            PongForm.GameTimer.Enabled := False;
+        end;
+    end;
+    if(BallX < -SIZEX)then
+    begin
+        Game := False;
+        Inc(Score2);
+        PongForm.Score2Label.Caption := IntToStr(Score2);
+        if(StrToInt(PongForm.Score2label.Caption) < 10)then
+            PongForm.Score2Label.Caption := '  ' + IntToStr(Score2);
+        if(Score2 > 11)then
+        begin
+            if(Settings.Language = English)then
+                PongForm.InfoLabel.Caption := 'Defeat' + #13#10 + 'Press SPACE to start again'
+            else
+                PongForm.InfoLabel.Caption := 'Поражение' + #13#10 + 'Нажмите пробел, чтобы начать заново';
+            PongForm.InfoLabel.Left := (PongForm.ClientWidth - PongForm.InfoLabel.Width) div 2;
+            PongForm.InfoLabel.Top := (PongForm.ClientHeight - PongForm.InfoLabel.Height) div 2;
+            PongForm.InfoLabel.Show;
+            PongForm.GameTimer.Enabled := False;
+        end;
+    end;
+end;
+procedure AccelerateBall();
+begin
+    if((BallX < SIZEX) and (BallX > 0) and (BallY < Bit1Y + SIZEY) and (BallY + SIZEX > Bit1Y) and (DirX = -1))then
+    begin
+        DirX := -DirX;
+        if(SpeedX < PongForm.GameField.Width div 50)then
+            SpeedX := SpeedX + Random(PongForm.GameField.Width div 400);
+        if (BallY >= Bit1Y + SIZEY * 2 div 3)then
+            SpeedY := SpeedY + Random(PongForm.GameField.Height div 125) * (-DirY)
+        else if((BallY + SIZEX) <= (Bit1Y + SizeY div 3))then
+            SpeedY := SpeedY + Random(PongForm.GameField.Height div 125) * DirY;
+    end;
+    if((BallX + SIZEX < PongForm.GameField.Width) and (BallX + SIZEX > PongForm.GameField.Width - SIZEX ) and (BallY < Bit2Y + SIZEY) and (BallY + SIZEX > Bit2Y) and (DirX = 1))then
+    begin
+        DirX := -DirX;
+        if(SpeedX < PongForm.GameField.Width div 50)then
+            SpeedX := SpeedX + random(PongForm.GameField.Width div 400);
+        if (BallY >= Bit2Y + SIZEY * 2 div 3) then
+                SpeedY := SpeedY + Random(PongForm.GameField.Height div 125) * (-DirY)
+            else if((BallY + SIZEX) <= (Bit2Y + SizeY div 3))then
+                SpeedY := SpeedY + Random(PongForm.GameField.Height div 125) * DirY;
+    end;
+end;
 procedure TPongForm.GameTimerTimer(Sender: TObject);
 var
     T: TPoint;
@@ -446,72 +524,10 @@ begin
     T:=ScreenToClient(PongForm.FDesignSize);
     if(Game)then
     begin
-        if((BallY + DirY*SpeedY < 0) or (BallY + DirY*SpeedY > GameField.Height - SIZEX))then
-            DirY := -DirY;
-        BallX := BallX + DirX * SpeedX;
-        BallY := BallY + DirY * SpeedY;
-        if(Bit2Y + SIZEY / 2 > BallY + SIZEX / 2)then
-            if(Bit2Y - SizeY div 12 >= 0)then
-                Bit2Y := Bit2Y - SizeY div 12;
-        if(Bit2Y + SIZEY / 2 < BallY + SIZEX / 2)then
-            if(Bit2Y + SizeY div 12 <= GameField.Height - SIZEY)then
-                Bit2Y := Bit2Y + SizeY div 12;
-        if(BallX > GameField.Width)then
-        begin
-            Game := False;
-            Inc(Score1);
-            Score1Label.Caption := IntToStr(Score1);
-            if(Score1 > 11)then
-            begin
-                if(Settings.Language = English)then
-                    InfoLabel.Caption := 'Victory' + #13#10 + 'Press SPACE to start again'
-                else
-                    InfoLabel.Caption := 'Победа' + #13#10 + 'Нажмите пробел, чтобы начать заново';
-                InfoLabel.Left := (PongForm.ClientWidth - InfoLabel.Width) div 2;
-                InfoLabel.Top := (PongForm.ClientHeight - InfoLabel.Height) div 2;
-                InfoLabel.Show;
-                GameTimer.Enabled := False;
-            end;
-        end;
-        if(BallX < -SIZEX)then
-        begin
-            Game := False;
-            Inc(Score2);
-            Score2Label.Caption := IntToStr(Score2);
-            if(StrToInt(Score2label.Caption) < 10)then
-                Score2Label.Caption := '  ' + IntToStr(Score2);
-            if(Score2 > 11)then
-            begin
-                if(Settings.Language = English)then
-                    InfoLabel.Caption := 'Defeat' + #13#10 + 'Press SPACE to start again'
-                else
-                    InfoLabel.Caption := 'Поражение' + #13#10 + 'Нажмите пробел, чтобы начать заново';
-                InfoLabel.Left := (PongForm.ClientWidth - InfoLabel.Width) div 2;
-                InfoLabel.Top := (PongForm.ClientHeight - InfoLabel.Height) div 2;
-                InfoLabel.Show;
-                GameTimer.Enabled := False;
-            end;
-        end;
-        if((BallX < SIZEX) and (BallX > 0) and (BallY < Bit1Y + SIZEY) and (BallY + SIZEX > Bit1Y) and (DirX = -1))then
-        begin
-            DirX := -DirX;
-            if(SpeedX < GameField.Width div 50)then
-                SpeedX := SpeedX + random(GameField.Width div 400);
-            if (BallY >= Bit1Y + SIZEY * 2 div 3)then
-                SpeedY := SpeedY + Random(GameField.Height div 125) * (-DirY)
-            else if((BallY + SIZEX) <= (Bit1Y + SizeY div 3))then
-                SpeedY := SpeedY + Random(GameField.Height div 125) * DirY;
-        end;
-        if((BallX + SIZEX < GameField.Width) and (BallX + SIZEX > GameField.Width - SIZEX ) and (BallY < Bit2Y + SIZEY) and (BallY + SIZEX > Bit2Y) and (DirX = 1))then
-        begin
-            DirX := -DirX;
-            if(SpeedX < GameField.Width div 50)then
-                SpeedX := SpeedX + random(GameField.Width div 400);
-            if (BallY >= Bit2Y + SIZEY * 2 div 3) then
-                    SpeedY := SpeedY + random(GameField.Height div 125) * (-DirY)
-                else if((BallY + SIZEX) <= (Bit2Y + SizeY div 3))then
-                    SpeedY := SpeedY + random(GameField.Height div 125) * DirY;
-        end;
+        MoveBall;
+        MoveBit2;
+        CheckGoal;
+        AccelerateBall;
         if(IsMouse)then
         begin
             Bit1Y := Mouse.CursorPos.Y + T.Y - SizeY div 2;

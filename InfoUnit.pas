@@ -43,12 +43,12 @@ begin
     if(Settings.Language = English)then
     begin
         InfoForm.Caption := 'Info';
-        BSUIRLabel.Caption := 'BSUIR, 2022';
+        BSUIRLabel.Caption := 'Volontirov Maksim, 2022';
     end
     else
     begin
         InfoForm.Caption := 'Инфо';
-        BSUIRLabel.Caption := 'БГУИР, 2022';
+        BSUIRLabel.Caption := 'Волонтиров Максим, 2022';
     end;
 end;
 

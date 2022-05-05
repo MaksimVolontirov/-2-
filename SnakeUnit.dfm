@@ -26807,9 +26807,9 @@ object SnakeForm: TSnakeForm
       OnKeyPress = NameEditKeyPress
     end
     object SaveButton: TButton
-      Left = 80
+      Left = 64
       Top = 121
-      Width = 129
+      Width = 161
       Height = 65
       Caption = 'Save'
       Enabled = False
@@ -26823,9 +26823,9 @@ object SnakeForm: TSnakeForm
       OnClick = SaveButtonClick
     end
     object CancelButton: TButton
-      Left = 80
+      Left = 64
       Top = 192
-      Width = 129
+      Width = 161
       Height = 65
       Caption = 'Cancel'
       Font.Charset = RUSSIAN_CHARSET

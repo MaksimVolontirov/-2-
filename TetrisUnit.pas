@@ -332,6 +332,7 @@ begin
         GameTimer.Enabled := False;
         TetrisForm.GameTimer.Interval := 5;
         Paint;
+        Score := 0;
         if(Settings.Language = English)then
         begin
             NextLabel.Left := Size * 13 + Gamefield.Left;
@@ -718,7 +719,8 @@ begin
                         rotation := (rotation + 1) mod amount;
     TetrisForm.Paint;
 end;
-procedure TTetrisForm.GameTimerTimer(Sender: TObject);
+
+procedure Game();
 begin
     if(GameOver)then
         ShowRestartLabel
@@ -735,7 +737,12 @@ begin
         end;
         FindCoordinates;
     end;
-    Paint();
+    TetrisForm.Paint();
+end;
+
+procedure TTetrisForm.GameTimerTimer(Sender: TObject);
+begin
+    Game();
 end;
 
 procedure TTetrisForm.InfoPLabelClick(Sender: TObject);

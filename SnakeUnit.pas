@@ -65,7 +65,7 @@ type
     TDirection = (DStop, DRight, DLeft, DUp, DDown);
 var
     PrevDir, Direction: TDirection;
-    Apple, Head: TPoint;
+    Apple: TPoint;
     Snake: Array[1..256] of TPoint;
     SnakeLength, Size, Score: Integer;
     GameOver, IsPause, IsMenu: Boolean;
@@ -254,7 +254,7 @@ begin
         Apple.Y := Random(16) + 1;
         IsOk := True;
         for var I := 1 to SnakeLength do
-            if(Snake[I].X = Apple.X) and (Snake[I].Y = Apple.Y)then
+            if(Snake[I] = Apple)then
                 IsOk := False;
     until IsOk;
 end;
@@ -531,6 +531,7 @@ begin
         CloseFile(OutputFile);
     end;
     SaveScorePanel.Hide;
+    SaveScorePanel.Enabled := False;
 end;
 
 procedure TSnakeForm.BackLabelClick(Sender: TObject);
@@ -580,12 +581,12 @@ begin
         if(Settings.Language = English)then
         begin
             lpCaption := 'Exit';
-            lpText := 'Are you sure you want to close Tetris?';
+            lpText := 'Are you sure you want to close Snake?';
         end
         else
         begin
             lpCaption := 'Выход';
-            lpText := 'Вы уверены, что хотите закрыть Tetris?';
+            lpText := 'Вы уверены, что хотите закрыть Snake?';
         end;
         Tip := MB_YESNO + MB_ICONINFORMATION + MB_DEFBUTTON2;
         case MessageBox(WND, lpText, lpCaption, Tip) of
